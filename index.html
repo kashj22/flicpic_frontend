@@ -106,12 +106,21 @@
       </form> 
     </section> 
 
-
+   <div id="tinderslide"> <!-- jTinder container -->
    <ul ng-repeat="n in movies.all">
-    <li>
+    <li class="panel">
       <img ng-src="http://image.tmdb.org/t/p/w500/{{n.poster_path}}">
+       <div class="like"></div>
+       <div class="dislike"></div>
     </li>
    </ul>
+   </div>
+
+   <!-- jTinder trigger by buttons  -->
+   <div class="actions">
+           <a href="#" class="dislike"><i></i></a>
+           <a href="#" class="like"><i></i></a>
+       </div>
   </main>
 
   <!-- jQuery lib -->
