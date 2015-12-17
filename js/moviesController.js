@@ -5,7 +5,8 @@ angular.module('FlicPic')
   MoviesController.$inject = ['$http'];
   function MoviesController($http, genre){
 
-    getGenres()
+    getGenres();
+    dropdown();
 
     var self = this; //this is in a variable self because of scope. this is in global scope. would be different in function get presidents
     // self and this is the same below in global scope. 
@@ -32,8 +33,12 @@ angular.module('FlicPic')
       $http
         .get(url)
         .then(function(res) {
+          console.log(res.data);
           self.all = res.data.results;
+         
         });
+
+        
     }
 
     function getGenres() {
@@ -60,31 +65,8 @@ angular.module('FlicPic')
         });
     }
 
-    // function getActors() {
-      
-    //   var url = 'https://api.themoviedb.org/3/search/person?query=' + this.person.name + '&api_key=213e6d38b03c7af40fb82d70ad6f0139'
-    //   // https://api.themoviedb.org/3/person/287/combined_credits?api_key=213e6d38b03c7af40fb82d70ad6f0139
-    //   $http
-    //     .get(url)//api url
-    //     .then(function(res) {
-    //       console.log(res);
-    //       self.all = res.data.person;
-    //     });
-    // }
+    function dropdown() {
+      $('select').material_select();
+    }
 
-    // function getYears(queryString) {
-    //   var url = 'https://api.themoviedb.org/3/discover/movie?primary_release_year=' + queryString + '&api_key=213e6d38b03c7af40fb82d70ad6f0139'
-    //   $http
-    //     .get()//api url
-    //     .then(function(res) {
-    //       console.log(res);
-    //       self.all = res.data.movies;
-    //     });
-    // }
-
-        // getMovieByGenre();
-    // getMovies();
-    // getGenres();
-    // getActors();
-    // getYears();
   }

@@ -1,0 +1,28 @@
+body {
+  background-color: silver;
+  text-align: center;
+}
+
+.topbar li {
+  display: inline-block;
+}
+
+.form {
+  width: 250px;
+  display: inline-block;
+  margin: 120px;
+  margin-top: 20px;
+}
+
+.films {
+  display: inline-block;
+  margin: 5px;
+  border: 10px solid black;
+}
+
+
+.movie_input {
+  width: 250px;
+  margin: 0 auto;
+}
+
